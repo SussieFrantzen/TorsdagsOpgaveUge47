@@ -39,7 +39,7 @@ public class AlleTilbud {
         this.tilgaengelig = tilgaengelig;
     }
 
-    public void ScanTilbud() {
+    public void scanTilbud() {
         try {  //
             File fileTilbud = new File("src/Data/tilbud.csv"); // stig til hvor filen findes
             Scanner scanner = new Scanner(fileTilbud); // scanner der læser filen

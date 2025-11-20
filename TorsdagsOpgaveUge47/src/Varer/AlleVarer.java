@@ -8,7 +8,7 @@ import java.util.*;
 public class AlleVarer {
     /* denne klasse læser filen for alle vare og giver hvert felt i linjen en type.
       */
-    public static Map<String, Vare> alleVareIndlaeses(String path) {
+    public static Map<String, Vare> alleVareIndlaeses() {
         Map<String, Vare> map = new HashMap<>();
         {
             try {

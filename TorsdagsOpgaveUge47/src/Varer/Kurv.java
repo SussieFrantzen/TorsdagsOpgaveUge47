@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Kurv {
-    private Collection<AlleVarer> kurv;
     public Collection<Vare> kurvArraylist = new ArrayList<>();
 
     public Kurv() {
@@ -22,17 +21,25 @@ public class Kurv {
         kurvArraylist.add(new Vare("5772739448785", " Hverdags Honning Flydende, 350 GR / Danmark",
                 "2025-11-12", 37.31, false, 350, "g", false,
                 false, true));
+
     }
 
 
 
-    public String getKurv(){
-        return kurvArraylist.toString();
+
+    public Collection<Vare> getKurv() {
+        return kurvArraylist;
     }
 
-    public void printArraylist() {
+    public void printArraylist() { // til test
         //System.out.println("\u001B[36m");
         kurvArraylist.forEach(System.out::println);
+    }
+
+    public void printDeklarationOgPris() {
+        Vare vare = (Vare) kurvArraylist;
+        System.out.println("produktbeskrivelse: " + vare.getVarerDeklaration());
+        System.out.println("Pris: " + vare.getPris());
     }
 
 }

@@ -1,3 +1,4 @@
+import Kasseapperatet.Bon;
 import Util.TestUI;
 import Varer.AlleTilbud;
 import Varer.AlleVarer;
@@ -7,22 +8,18 @@ import Varer.ScanningSystem;
 public class Main {
     public static void main(String[] args) {
 
-        //Test:
-        //AlleTilbud alleTilbud = new AlleTilbud();
-        //alleTilbud.ScanTilbud();
-        //alleTilbud.printArraylist();
-        TestUI tui = new TestUI();
-
-        AlleVarer alleVarer = new AlleVarer();
-        alleVarer.ScanVarer();
-       // alleVarer.printArraylist();
-
+      //test
+        Bon bon = new Bon();
+        AlleVarer alleVarer= new AlleVarer();
+        AlleTilbud alleTilbud= new AlleTilbud();
         Kurv kurv = new Kurv();
-        kurv.tilføjTilKurv();
-       // kurv.printArraylist();
+        ScanningSystem scanningSystem= new ScanningSystem();
 
-        ScanningSystem scanningSystem = new ScanningSystem();
-        scanningSystem.VarerFindesPåBeggeLister();
-        scanningSystem.printArraylist();
+        alleVarer.alleVareIndlaeses();
+        alleTilbud.scanTilbud();
+        kurv.tilføjTilKurv();
+
+        bon.bon();
+       //  kurv.printDeklarationOgPris();
     }
 }
