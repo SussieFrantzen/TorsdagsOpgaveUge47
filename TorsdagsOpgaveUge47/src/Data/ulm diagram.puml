@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Kasseapperatet -> Bon
+Kasseapperatet <|-- RegneArk
+RegneArk <|-- ScanningSystem
+
+ScanningSystem <|- KundekurvRobot
+Varer<|- AlleVarer
+Varer <|-- AlleTilbud
+Varer --|> KundekurvRobot
+Varer --|> ScanningSystem
+
+class AlleTilbud {
+ArrayList <String> AlleTilbud
+metode der skal aflæse filen
+metode der opdeler det læste ved opdeling ud fra ( ; )
+metode der sætter det aflæste ind i ArrayList/collection
+}
+class AlleVarer {
+ArrayList < string > AlleVarer
+metode der skal aflæse filen
+metode der opdeler det læste ved opdeling ud fra ( ; )
+metode der sætter det aflæste ind i ArrayList/collection
+}
+class ScanningSystem {
+ArrayList/Collection
+Metode der aflæser kundens kurv og ser om vareren findes i AlleTilbud.
+
+}
+class RegneArk{
+metode der lægger gentagelserne/dublegetterne sammen.
+samletTotalPris();
+momsUdgør();
+}
+class Bon{
+Main printer bon
+}
+class Varer{
+Metode der henter varer fra de to Collections og danner nyt arraylist
+}
+class KundekurvRobot{
+Tester system med en tilfældig kundekurv der bliver dannet
+}
+
+@enduml
